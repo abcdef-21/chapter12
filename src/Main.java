@@ -11,10 +11,15 @@ public class Main {
 
         c[2] = new Thief();
         c[2].name = "盗賊";
+        Monster[] monsters = new Monster[3];
+        monsters[0] = new Matango();
+        monsters[1] = new Goblin();
+        monsters[2] = new Slime();
 
         for (Character member : c) {
-            member.hp += 50;
-            System.out.println(member.name+"を回復した");
+            for (Monster m : monsters) {
+                member.attack(m);
+            }
         }
         /*Hero h = new Hero();
         h.name = "勇者";
